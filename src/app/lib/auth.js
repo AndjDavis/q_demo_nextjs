@@ -18,7 +18,6 @@ export const authConfig = {
         }
       },
       async authorize(credentials) {
-        console.log("AUTHORIZES CREDENTIALS", credentials)
         try {
           const response = await fetch("http://127.0.0.1:8000/api/token/", {
             method: "POST",
@@ -31,8 +30,6 @@ export const authConfig = {
             }),
           });
 
-          console.log("A RESPONSE TO TEST", response)
-
           if (!response.ok) {
             // Handle errors (e.g., invalid credentials)
             throw new Error('Invalid credentials');
@@ -40,7 +37,6 @@ export const authConfig = {
 
           const user = await response.json();
           if (user) {
-            console.log("User", user)
             return {
               id: user.user_id,
               email: user.email,

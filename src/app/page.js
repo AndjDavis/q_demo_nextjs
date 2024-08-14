@@ -8,12 +8,11 @@ import { GoogleSignInButton, GithubSignInButton } from "./components/authButton"
 export default async function SignInPage() {
   try {
     const session = await getServerSession(authConfig);
-    console.log("Session: ", session);
     // TODO: redirect to home;
     // TODO: Create home screen;
     if (session) return redirect("/dashboard");
   } catch (error) {
-    console.log("IS THIS WHAT IS HITTING?", error)
+    console.log("session error", error)
   }
 
 

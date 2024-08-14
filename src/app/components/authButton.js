@@ -3,8 +3,7 @@
 import Image from "next/image";
 import googleLogo from "../../../public/google.png";
 import githubLogo from "../../../public/github.png";
-// import googleLogo from "@/public/google.png";
-// import githubLogo from "@/public/github.png";
+
 import { signIn } from "next-auth/react";
 
 export function GoogleSignInButton() {
